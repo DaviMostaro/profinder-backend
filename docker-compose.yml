@@ -1,16 +1,19 @@
+version: "3.8"
+
 services:
   database:
-    image: postgres
+    image: postgres:18
     container_name: profinder-db
+    restart: unless-stopped
     ports:
-      - "5432:5432"
+      - "3001:5432"
     environment:
       POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: 54321
       POSTGRES_DB: profinder
     volumes:
       - profinder-data:/var/lib/postgresql
 
 volumes:
-  profinder-data: {}
-
+  profinder-data:
+    driver: local

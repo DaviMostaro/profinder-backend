@@ -16,7 +16,8 @@ export const users = pgTable("users", {
     name: varchar("name", { length: 200 }).notNull(),
     email: varchar("email", { length: 200 }).notNull().unique(),
     password: varchar("password", { length: 255 }).notNull(),
-    phone: varchar("phone", { length: 20 }),
+    ddd: varchar("ddd", { length: 2 }),
+    phone: varchar("phone", { length: 9 }),
     bio: text("bio"),
     rating: integer("rating").notNull().default(0),
     createdAt: timestamp("created_at").defaultNow(),
@@ -36,7 +37,6 @@ export const posts = pgTable("posts", {
     id: uuid("id").primaryKey().defaultRandom(),
     title: varchar("title", { length: 255 }).notNull(),
     description: text("description").notNull(),
-    price: decimal("price"),
     createdAt: timestamp("created_at").defaultNow(),
     updatedAt: timestamp("updated_at").defaultNow(),
 

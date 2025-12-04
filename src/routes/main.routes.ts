@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { authRoutes } from "./auth.routes.";
+import { userRoutes } from "./user.routes";
 
 export const mainRoutes = Router();
 
@@ -8,3 +9,4 @@ mainRoutes.get("/ping", (req, res) => {
 });
 
 mainRoutes.use("/auth", authRoutes);
+mainRoutes.use("/user", userRoutes);

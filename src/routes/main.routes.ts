@@ -11,3 +11,4 @@ mainRoutes.get("/ping", (req, res) => {
 
 mainRoutes.use("/auth", authRoutes);
 mainRoutes.use("/user", userRoutes);
+mainRoutes.use("/post", postRoutes);

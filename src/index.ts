@@ -37,7 +37,7 @@ async function main() {
                 ddd: "11",
                 bio: "Eletricista com 10 anos de experiência",
                 rating: 4,
-                locationId: insertedLocations[0].id,
+                locationId: insertedLocations[0]!.id,
             },
             {
                 name: "Ana Pereira",
@@ -47,7 +47,7 @@ async function main() {
                 ddd: "21",
                 bio: "Encanadora especializada em emergências residenciais",
                 rating: 5,
-                locationId: insertedLocations[1].id,
+                locationId: insertedLocations[1]!.id,
             },
             {
                 name: "João Silva",
@@ -57,7 +57,7 @@ async function main() {
                 ddd: "41",
                 bio: "Pintor profissional",
                 rating: 3,
-                locationId: insertedLocations[2].id,
+                locationId: insertedLocations[2]!.id,
             },
         ])
         .returning();
@@ -77,20 +77,20 @@ async function main() {
             {
                 title: "Troca de chuveiro elétrico",
                 description: "Faço instalação e troca de chuveiro em até 1h.",
-                userId: insertedUsers[0].id,
-                categoryId: insertedCategories[0].id,
+                userId: insertedUsers[0]!.id,
+                categoryId: insertedCategories[0]!.id,
             },
             {
                 title: "Conserto de vazamentos",
                 description: "Atendo emergências e identificação de vazamentos.",
-                userId: insertedUsers[1].id,
-                categoryId: insertedCategories[1].id,
+                userId: insertedUsers[1]!.id,
+                categoryId: insertedCategories[1]!.id,
             },
             {
                 title: "Pintura de quarto",
                 description: "Pintura com acabamento profissional e material incluso.",
-                userId: insertedUsers[2].id,
-                categoryId: insertedCategories[2].id,
+                userId: insertedUsers[2]!.id,
+                categoryId: insertedCategories[2]!.id,
             },
         ])
         .returning();
@@ -99,27 +99,27 @@ async function main() {
         {
             rating: 5,
             comment: "Excelente atendimento!",
-            userId: insertedUsers[1].id,
-            postId: insertedPosts[0].id,
+            userId: insertedUsers[1]!.id,
+            postId: insertedPosts[0]!.id,
         },
         {
             rating: 4,
             comment: "Resolveu meu problema rapidamente.",
-            userId: insertedUsers[0].id,
-            postId: insertedPosts[1].id,
+            userId: insertedUsers[0]!.id,
+            postId: insertedPosts[1]!.id,
         },
         {
             rating: 3,
             comment: "Bom serviço, mas poderia ser mais rápido.",
-            userId: insertedUsers[2].id,
-            postId: insertedPosts[2].id,
+            userId: insertedUsers[2]!.id,
+            postId: insertedPosts[2]!.id,
         },
     ]);
 
     await db.insert(savedPosts).values([
-        { userId: insertedUsers[1].id, postId: insertedPosts[0].id },
-        { userId: insertedUsers[0].id, postId: insertedPosts[2].id },
-        { userId: insertedUsers[2].id, postId: insertedPosts[1].id },
+        { userId: insertedUsers[1]!.id, postId: insertedPosts[0]!.id },
+        { userId: insertedUsers[0]!.id, postId: insertedPosts[2]!.id },
+        { userId: insertedUsers[2]!.id, postId: insertedPosts[1]!.id },
     ]);
 
     console.log("🌱 Seed completed.");

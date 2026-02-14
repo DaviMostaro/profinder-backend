@@ -23,7 +23,7 @@ export async function signinController(req: Request, res: Response) {
             sameSite: "strict",
         })
 
-        res.status(200).json({
+        return res.status(200).json({
             message: "Login realizado com sucesso!",
             token,
             user: {

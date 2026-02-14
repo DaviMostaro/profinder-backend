@@ -3,6 +3,9 @@ import { getUserService } from "../../../services/user/get-user.service";
 
 export async function getUserController(req: Request, res: Response) {
     const userId = req.params.id;
+    if (!userId) {
+        return res.status(400).json({ message: "ID é obrigatório" });
+    }
 
     const user = await getUserService(userId);
 

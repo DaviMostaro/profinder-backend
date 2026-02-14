@@ -8,11 +8,13 @@ export async function updateUserController(req: ExtendedRequest, res: Response) 
     const safeData = updateUserSchema.safeParse(req.body);
 
     if(!safeData.success) {
-        res.status(400).json({ errors: safeData.error });
-        return;
+        return res.status(400).json({ errors: safeData.error });
     }
 
     const { id } = req.params;
+    if (!id) {
+        return res.status(400).json({ message: "ID é obrigatório" });
+    }
 
     const newUser = await updateUserService({
         userId: id,
@@ -20,9 +22,8 @@ export async function updateUserController(req: ExtendedRequest, res: Response) 
     });
 
     if(!newUser) {
-        res.status(404).json({ message: "User not found" });
-        return;
+        return res.status(404).json({ message: "User not found" });
     }
 
-    res.status(200).json({ user: newUser });
+    return res.status(200).json({ user: newUser });
 }

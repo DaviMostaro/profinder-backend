@@ -3,6 +3,9 @@ import { getUserPostsService } from "../../../services/user/get-user-posts.servi
 
 export async function getUserPostsController(req: Request, res: Response) {
     const userId = req.params.id;
+    if (!userId) {
+        return res.status(400).json({ message: "ID é obrigatório" });
+    }
 
     const userPosts = await getUserPostsService(userId);
 

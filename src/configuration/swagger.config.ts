@@ -7,11 +7,6 @@ const definition = {
     version: "1.0.0",
     description:
       "API for ProFinder — find and connect with local service providers (electricians, plumbers, painters, etc.).",
-    contact: {
-      name: "Cauan Lagrotta, Davi Mostaro",
-      url: "https://www.linkedin.com/in/cauan-silva-lagrotta/",
-      email: "cauanlagrotta@gmail.com",
-    },
   },
   servers: [
     {

@@ -5,7 +5,6 @@ export async function signoutController(_req: Request, res: Response): Promise<R
         res.clearCookie("token").send();
         return res.status(204);
     }catch (err){
-        console.log(err);
         return res.status(500).json({ message: "Erro interno do servidor!" });
     }
 }

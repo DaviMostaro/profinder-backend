@@ -143,6 +143,36 @@ export const swaggerPaths = {
     },
   },
 
+  "/auth/signout": {
+    post: {
+      tags: ["Auth"],
+      summary: "Sign out",
+      description: "Logs out the authenticated user by clearing the authentication cookie.",
+      operationId: "signout",
+      security: [{ bearerAuth: [] }],
+      responses: {
+        "204": {
+          description: "Logout successful",
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+              },
+            },
+          },
+        },
+        "500": {
+          description: "Internal server error",
+          content: {
+            "application/json": {
+              schema: { $ref: "#/components/schemas/Error" },
+            },
+          },
+        },
+      },
+    },
+  },
+
   "/user/{id}": {
     get: {
       tags: ["User"],

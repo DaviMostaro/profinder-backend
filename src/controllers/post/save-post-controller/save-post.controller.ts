@@ -2,7 +2,7 @@ import { Response } from "express";
 import { ExtendedRequest } from "../../../types/extended-request";
 import { savePostService } from "../../../services/post/save-post.service";
 
-export async function SavePostController(req: ExtendedRequest, res: Response) {
+export async function savePostController(req: ExtendedRequest, res: Response) {
     const userId = req.user?.id;
     const postId = req.params.id;
 

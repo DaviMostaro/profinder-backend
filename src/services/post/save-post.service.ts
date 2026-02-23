@@ -7,5 +7,9 @@ export async function savePostService(userId: string, postId: string) {
         postId,
     }).returning();
 
+    if (savedPost.length === 0) {
+        throw new Error("Erro ao salvar post");
+    }
+
     return savedPost[0];
 }

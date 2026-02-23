@@ -6,5 +6,5 @@ import { upload } from "../lib/multer";
 
 export const postRoutes = Router();
 
-postRoutes.post("/", verifyJWT, upload.array("images", 5),publishPostController);
-postRoutes.get("/:id/save", verifyJWT, SavePostController);
+postRoutes.post("/", verifyJWT, upload.array("images", 5), publishPostController);
+postRoutes.post("/:id/save", verifyJWT, SavePostController);

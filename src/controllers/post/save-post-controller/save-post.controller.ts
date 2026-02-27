@@ -15,8 +15,8 @@ export async function savePostController(req: ExtendedRequest, res: Response) {
     }
 
     try {
-        const savedPost = await savePostService(userId, postId);
-        return res.status(200).json({ message: "Post salvo com sucesso", savedPost });
+        await savePostService(userId, postId);
+        return res.status(200).json({ message: "Post salvo com sucesso" });
     } catch (error) {
         return res.status(500).json({ message: "Erro ao salvar post: " + error });
     }

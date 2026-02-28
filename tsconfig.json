@@ -12,7 +12,7 @@
     "lib": ["ES2022"],
 
     /* Types */
-    "types": ["node"],
+    "types": ["node", "jest"],
 
     /* Emit */
     "sourceMap": true,

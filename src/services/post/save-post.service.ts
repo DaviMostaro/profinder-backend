@@ -1,5 +1,6 @@
 import { db } from "../../db";
 import { savedPosts } from "../../db/schema";
+import { SavePostError } from "../../errors/save-post.error";
 
 export async function savePostService(userId: string, postId: string) {
     const savedPost = await db.insert(savedPosts).values({
@@ -8,7 +9,7 @@ export async function savePostService(userId: string, postId: string) {
     }).returning();
 
     if (savedPost.length === 0) {
-        throw new Error("Erro ao salvar post");
+        throw new SavePostError();
     }
 
     return savedPost[0];

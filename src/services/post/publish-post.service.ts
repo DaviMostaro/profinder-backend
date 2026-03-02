@@ -1,5 +1,6 @@
 import { db } from "../../db";
 import { postImages, posts } from "../../db/schema";
+import { CreatePostError } from "../../errors/create-post.error";
 import { uploadImage } from "../../utils/upload";
 
 interface PublishPostServiceProps {
@@ -23,7 +24,7 @@ export async function publishPostService({  title, description, categoryId, user
             .returning();
 
         if (!post) {
-            throw new Error("Falha ao criar post");
+            throw new CreatePostError();
         }
 
         if(files?.length) {

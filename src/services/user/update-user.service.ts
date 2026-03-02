@@ -1,6 +1,7 @@
 import { eq } from "drizzle-orm";
 import { db } from "../../db";
 import { users } from "../../db/schema";
+import { UserNotFoundError } from "../../errors/user-not-found.error";
 
 interface updateUserProps {
     userId: string;
@@ -31,7 +32,7 @@ export async function updateUserService({ userId, data }: updateUserProps) {
         });
 
     if(updatedUser.length === 0) {
-        throw new Error("User not found");
+        throw new UserNotFoundError();
     }
 
     return updatedUser[0];

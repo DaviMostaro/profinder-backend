@@ -6,6 +6,11 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(3333),
   DATABASE_URL: z.string(),
   JWT_SECRET: z.string().min(32),
+  BREVO_SMTP_PASS: z.string(),
+  BREVO_SMTP_HOST: z.string(),
+  BREVO_SMTP_PORT: z.coerce.number(),
+  BREVO_SMTP_USER: z.string(),
+  FRONTEND_URL: z.string(),
 });
 
 const _env = envSchema.safeParse(process.env);

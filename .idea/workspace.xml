@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a562e554-f6d9-4b63-94a7-e8df7fbf477d" name="Changes" comment="refactor: simplify response in save post controller by removing unnecessary variable">
-      <change afterPath="$PROJECT_DIR$/.idea/MarsCodeWorkspaceAppSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_18_26,_11_11 AM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_18_26__11_11AM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jest.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__mocks__/bcrypt.mock.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__mocks__/db.mock.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__mocks__/jwt.mock.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fixtures/user.fixture.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/auth/signin.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    <list default="true" id="a562e554-f6d9-4b63-94a7-e8df7fbf477d" name="Changes" comment="feat: implement password reset functionality with email notifications">
+      <change afterPath="$PROJECT_DIR$/src/controllers/reviews/create-review.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/reviews/create-review.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="83" />
+    <option name="cachedIndexableFilesCount" value="94" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="feature/forgot-password" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,35 +60,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Jest.signin.executor": "Coverage",
-    "Jest.signin.should login a user and return a token and user data.executor": "Coverage",
-    "Jest.signin.should return a token and user data.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.server.ts.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "test/add-unit-tests",
-    "javascript.preferred.runtime.type.id": "node",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/home/cauan/projects/profinder-backend/node_modules/jest",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "npm.seed.executor": "Run",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/home/cauan/projects/profinder-backend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Jest.signin.executor&quot;: &quot;Coverage&quot;,
+    &quot;Jest.signin.should login a user and return a token and user data.executor&quot;: &quot;Coverage&quot;,
+    &quot;Jest.signin.should return a token and user data.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.server.ts.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/home/cauan/projects/profinder-backend/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.seed.executor&quot;: &quot;Run&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/cauan/projects/profinder-backend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Jest.signin">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/controllers/auth/reset-password-controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
     <configuration name="signin" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
@@ -172,10 +164,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.signin" />
-        <item itemvalue="Jest.signin.should login a user and return a token and user data" />
         <item itemvalue="npm.seed" />
         <item itemvalue="Jest.signin.should return a token and user data" />
+        <item itemvalue="Jest.signin.should login a user and return a token and user data" />
+        <item itemvalue="Jest.signin" />
         <item itemvalue="npm.seed" />
       </list>
     </recent_temporary>
@@ -183,7 +175,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.31033.133" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.32098.39" />
       </set>
     </attachedChunks>
   </component>
@@ -204,6 +196,15 @@
       <workItem from="1771963583990" duration="2276000" />
       <workItem from="1772196557606" duration="12331000" />
       <workItem from="1772242516804" duration="991000" />
+      <workItem from="1772537076912" duration="354000" />
+      <workItem from="1772537440737" duration="623000" />
+      <workItem from="1772812048548" duration="4583000" />
+      <workItem from="1773049822521" duration="2117000" />
+      <workItem from="1773099199908" duration="3923000" />
+      <workItem from="1773137967698" duration="7268000" />
+      <workItem from="1773274285417" duration="2611000" />
+      <workItem from="1773748289903" duration="14000" />
+      <workItem from="1773789631951" duration="157000" />
     </task>
     <task id="LOCAL-00001" summary="fix: add fixing for database seeding">
       <option name="closed" value="true" />
@@ -285,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772214838992</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: implement password reset functionality with email notifications">
+      <option name="closed" value="true" />
+      <created>1773144060760</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773144060760</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +307,8 @@
     <MESSAGE value="delete tsconfig.json" />
     <MESSAGE value="feature: add signout feature" />
     <MESSAGE value="refactor: simplify response in save post controller by removing unnecessary variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: simplify response in save post controller by removing unnecessary variable" />
+    <MESSAGE value="feat: implement password reset functionality with email notifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement password reset functionality with email notifications" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/profinder_backend$signin_should_login_a_user_and_return_a_token_and_user_data.info" NAME="signin.should login a user and return a token and user data Coverage Results" MODIFIED="1772242557670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

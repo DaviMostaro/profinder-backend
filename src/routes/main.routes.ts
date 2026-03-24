@@ -4,6 +4,8 @@ import { userRoutes } from "./user.routes";
 import { postRoutes } from "./post.routes";
 import { reviewsRoutes } from "./reviews.routes";
 
+import { reviewsRoutes } from "./reviews.routes";
+
 export const mainRoutes = Router();
 
 mainRoutes.get("/ping", (req, res) => {
@@ -14,3 +16,4 @@ mainRoutes.use("/auth", authRoutes);
 mainRoutes.use("/user", userRoutes);
 mainRoutes.use("/post", postRoutes);
 mainRoutes.use("/reviews", reviewsRoutes);
+

@@ -1,7 +1,9 @@
 import { Router } from "express";
+import { getReviewsController } from "../controllers/reviews/get-reviews.controller";
 import { createReviewController } from "../controllers/reviews/create-review.controller";
 import { verifyJWT } from "../utils/jwt";
 
-export const reviewRoutes = Router();
+export const reviewsRoutes = Router();
 
-reviewRoutes.post("/:userId/:postId", verifyJWT, createReviewController);
+reviewsRoutes.get("/:postId", getReviewsController);
+reviewsRoutes.post("/:userId/:postId", verifyJWT, createReviewController);

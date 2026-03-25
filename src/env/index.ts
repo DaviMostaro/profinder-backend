@@ -10,6 +10,9 @@ const envSchema = z.object({
   BREVO_SMTP_HOST: z.string(),
   BREVO_SMTP_PORT: z.coerce.number(),
   BREVO_SMTP_USER: z.string(),
+  CLOUDINARY_NAME: z.string(),
+  CLOUDINARY_API_KEY: z.string(),
+  CLOUDINARY_API_SECRET: z.string(),
   FRONTEND_URL: z.string(),
 });
 

@@ -2,10 +2,10 @@ import {mockDb} from "../../__mocks__/db.mock";
 import {mockBcrypt} from "../../__mocks__/bcrypt.mock";
 import {mockJwt} from "../../__mocks__/jwt.mock";
 import {userFixture} from "../../fixtures/user.fixture";
-import {signinService} from "./signin.service";
-import {InvalidCredentialsError} from "../../errors/invalid-credentials.error";
+import {signinService} from "../../../src/services/auth/signin.service";
+import {InvalidCredentialsError} from "../../../src/errors/invalid-credentials.error";
 
-jest.mock("../../db", () => ({db: mockDb}));
+jest.mock("../../../src/db", () => ({db: mockDb}));
 jest.mock("bcryptjs", () => mockBcrypt);
 jest.mock("jsonwebtoken", () => mockJwt);
 

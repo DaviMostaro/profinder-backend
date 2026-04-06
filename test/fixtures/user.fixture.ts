@@ -65,3 +65,20 @@ export const signupDataWithoutBioFixture = {
 export const hashedPasswordFixture = "hashed_password";
 
 export const fakeTokenFixture = "fake_token";
+
+export const updatedUserData = {
+    name: "John Updated",
+    ddd: "21",
+    phone: "888888888",
+    bio: "Updated bio",
+    avatarUrl: "http://new-avatar.com/avatar.png"
+};
+
+export const updatedUserResponse = {
+    name: updatedUserData.name,
+    avatarUrl: updatedUserData.avatarUrl,
+    ddd: updatedUserData.ddd,
+    phone: updatedUserData.phone,
+    bio: updatedUserData.bio,
+    updatedAt: new Date()
+};

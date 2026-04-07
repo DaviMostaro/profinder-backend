@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a562e554-f6d9-4b63-94a7-e8df7fbf477d" name="Changes" comment="feat: implement password reset functionality with email notifications">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__mocks__/bcrypt.mock.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__mocks__/db.mock.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__mocks__/jwt.mock.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fixtures/user.fixture.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/auth/signin.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/__mocks__/db.mock.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/__mocks__/db.mock.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fixtures/user.fixture.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/user.fixture.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +25,10 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="INCOMING_COMMITS_CHECK_STRATEGY" value="FETCH" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="refactor/remove-edit-and-delete-endpoint" />
+        <entry key="$PROJECT_DIR$" value="test/review-services-unit-tests" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,6 +63,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Jest.All Tests.executor": "Coverage",
+    "Jest.Tests in test/.executor": "Coverage",
+    "Jest.deleteUserService.executor": "Coverage",
+    "Jest.getUserService.executor": "Coverage",
     "Jest.signin (1).executor": "Run",
     "Jest.signin.executor": "Coverage",
     "Jest.signin.should login a user and return a token and user data.executor": "Coverage",
@@ -78,6 +80,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
+    "git.auto.fetch.suggestion.counter": "1",
     "javascript.preferred.runtime.type.id": "node",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -98,41 +101,36 @@
       <recent name="$PROJECT_DIR$/src/controllers/auth/reset-password-controller" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration name="signin (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.All Tests">
+    <configuration name="All Tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="deleteUserService" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/test/auth/unit/signin.spec.ts" />
+      <test-file value="$PROJECT_DIR$/test/user/unit/delete-user.spec.ts" />
       <test-names>
-        <test-name value="signin" />
+        <test-name value="deleteUserService" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="signin" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="getUserService" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/services/auth/signin.spec.ts" />
+      <test-file value="$PROJECT_DIR$/test/user/unit/get-user.spec.ts" />
       <test-names>
-        <test-name value="signin" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="signin.should login a user and return a token and user data" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/auth/signin.spec.ts" />
-      <test-names>
-        <test-name value="signin" />
-        <test-name value="should login a user and return a token and user data" />
+        <test-name value="getUserService" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -173,20 +171,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Jest.signin (1)" />
-      <item itemvalue="Jest.signin" />
-      <item itemvalue="Jest.signin.should login a user and return a token and user data" />
+      <item itemvalue="Jest.All Tests" />
+      <item itemvalue="Jest.deleteUserService" />
+      <item itemvalue="Jest.getUserService" />
       <item itemvalue="Jest.signin.should return a token and user data" />
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.seed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.All Tests" />
+        <item itemvalue="Jest.getUserService" />
+        <item itemvalue="Jest.deleteUserService" />
         <item itemvalue="npm.seed" />
         <item itemvalue="Jest.signin.should return a token and user data" />
-        <item itemvalue="Jest.signin.should login a user and return a token and user data" />
-        <item itemvalue="Jest.signin" />
-        <item itemvalue="Jest.signin (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -226,6 +224,8 @@
       <workItem from="1774986450186" duration="109000" />
       <workItem from="1774986565502" duration="666000" />
       <workItem from="1774987241133" duration="232000" />
+      <workItem from="1775179089603" duration="291000" />
+      <workItem from="1775432321886" duration="3263000" />
     </task>
     <task id="LOCAL-00001" summary="fix: add fixing for database seeding">
       <option name="closed" value="true" />
@@ -332,7 +332,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="feat: implement password reset functionality with email notifications" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/profinder_backend$signin_should_login_a_user_and_return_a_token_and_user_data.info" NAME="signin.should login a user and return a token and user data Coverage Results" MODIFIED="1772242557670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/profinder_backend$Tests_in_test_.info" NAME="Tests in test/ Coverage Results" MODIFIED="1775179246714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/profinder_backend$deleteUserService.info" NAME="deleteUserService Coverage Results" MODIFIED="1775438098402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/profinder_backend$getUserService.info" NAME="getUserService Coverage Results" MODIFIED="1775438328255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/profinder_backend$signin.info" NAME="signin Coverage Results" MODIFIED="1772242985909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/profinder_backend$signin_should_login_a_user_and_return_a_token_and_user_data.info" NAME="signin.should login a user and return a token and user data Coverage Results" MODIFIED="1772242557670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/profinder_backend$All_Tests.info" NAME="All Tests Coverage Results" MODIFIED="1775438348650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

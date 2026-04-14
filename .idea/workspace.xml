@@ -4,10 +4,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a562e554-f6d9-4b63-94a7-e8df7fbf477d" name="Changes" comment="feat: implement password reset functionality with email notifications">
+    <list default="true" id="a562e554-f6d9-4b63-94a7-e8df7fbf477d" name="Changes" comment="feat(test): add unit tests for user services&#10;- Add tests for getUserService, getUserByEmailService, getUserPostsService,&#10;  updateUserService, and deleteUserService&#10;- Create test/fixtures/post.fixture.ts with post fixtures&#10;- Update test/fixtures/user.fixture.ts with update user fixtures&#10;- Extend db mock with select, from, limit, and delete methods&#10;- Achieve 100% coverage on user services">
+      <change afterPath="$PROJECT_DIR$/src/controllers/auth/forgot-password.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/auth/request-reset-token.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/auth/reset-password.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/auth/signin.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/auth/signout.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/post/delete-post.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/post/get-saved-posts.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/post/remove-saved-post.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/post/save-post.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/user/delete-user.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/__mocks__/db.mock.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/__mocks__/db.mock.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/user.fixture.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/user.fixture.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration/swagger.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration/swagger.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration/swagger.paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration/swagger.paths.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/auth/forgot-password-controller/forgot-password.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/auth/reset-password-controller/request-reset-token.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/auth/reset-password-controller/reset-password.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/auth/signin-controller/signin.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/auth/signout-controller/signout.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/auth/signup-controller/signup.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/auth/signup.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/post/delete-post-controller/delete-post.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/post/edit-post-controller/edit-post.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/post/edit-post.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/post/get-saved-posts-controller/get-saved-posts.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/post/publish-post-controller/publish-post.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/post/publish-post.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/post/remove-saved-post-controller/remove-saved-post.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/post/save-post-controller/save-post.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/reviews/create-review.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/reviews/create-review.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/reviews/get-reviews.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/reviews/get-reviews.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/search/search-post.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/search/search-post.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user/delete-user-controller/delete-user.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user/get-user-controller/get-user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user/get-user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user/get-user-posts-controller/get-user-posts.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user/get-user-posts.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user/update-user-controller/update-user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user/update-user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/create-post.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/create-post.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/delete-post.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/delete-post.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/delete-user.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/delete-user.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/email-already-exists.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/email-already-exists.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/invalid-credentials.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/invalid-credentials.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/not-found-post.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/not-found-post.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/rating-not-integer.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/rating-not-integer.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/remove-saved-post.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/remove-saved-post.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/review-not-found.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/review-not-found.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/save-post.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/save-post.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/token-invalid-or-not-found.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/token-invalid-or-not-found.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/update-post.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/update-post.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/user-not-found.error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/user-not-found.error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/auth.routes..ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/auth.routes..ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/post.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/post.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +109,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Jest.All Tests.executor": "Coverage",
+    "Jest.All Tests.executor": "Run",
     "Jest.Tests in test/.executor": "Coverage",
     "Jest.deleteUserService.executor": "Coverage",
     "Jest.getUserService.executor": "Coverage",
@@ -72,6 +118,7 @@
     "Jest.signin.should login a user and return a token and user data.executor": "Coverage",
     "Jest.signin.should return a token and user data.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.leetcode.ts.executor": "Run",
     "Node.js.server.ts.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -91,17 +138,20 @@
     "npm.dev.executor": "Run",
     "npm.seed.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/home/cauan/projects/profinder-backend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/controllers/user" />
+      <recent name="$PROJECT_DIR$/src/controllers/post" />
+      <recent name="$PROJECT_DIR$/src/controllers/auth" />
       <recent name="$PROJECT_DIR$/src/controllers/auth/reset-password-controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.All Tests">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="All Tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
@@ -134,17 +184,7 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="signin.should return a token and user data" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/auth/signin.spec.ts" />
-      <test-names>
-        <test-name value="signin" />
-        <test-name value="should return a token and user data" />
-      </test-names>
+    <configuration name="leetcode.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/leetcode.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
@@ -174,17 +214,17 @@
       <item itemvalue="Jest.All Tests" />
       <item itemvalue="Jest.deleteUserService" />
       <item itemvalue="Jest.getUserService" />
-      <item itemvalue="Jest.signin.should return a token and user data" />
+      <item itemvalue="Node.js.leetcode.ts" />
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.seed" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Jest.All Tests" />
+        <item itemvalue="Node.js.leetcode.ts" />
         <item itemvalue="Jest.getUserService" />
         <item itemvalue="Jest.deleteUserService" />
         <item itemvalue="npm.seed" />
-        <item itemvalue="Jest.signin.should return a token and user data" />
       </list>
     </recent_temporary>
   </component>
@@ -226,6 +266,14 @@
       <workItem from="1774987241133" duration="232000" />
       <workItem from="1775179089603" duration="291000" />
       <workItem from="1775432321886" duration="3263000" />
+      <workItem from="1775580239560" duration="924000" />
+      <workItem from="1775658741079" duration="4604000" />
+      <workItem from="1775838829271" duration="2945000" />
+      <workItem from="1775864105844" duration="1276000" />
+      <workItem from="1775903948870" duration="596000" />
+      <workItem from="1775947379454" duration="136000" />
+      <workItem from="1776123233942" duration="82000" />
+      <workItem from="1776180752487" duration="3225000" />
     </task>
     <task id="LOCAL-00001" summary="fix: add fixing for database seeding">
       <option name="closed" value="true" />

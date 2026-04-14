@@ -12,6 +12,8 @@ import { env } from "./env";
 import swaggerUi from "swagger-ui-express";
 import { swaggerSpec } from "./configuration/swagger.config";
 import { ZodError } from "zod";
+import { AppError } from "./errors/app-error";
+import { formatErrorResponse } from "./errors/error-response";
 
 const app = express();
 
@@ -33,21 +35,42 @@ const errorHandler: ErrorRequestHandler = (
   res: Response,
   _next: NextFunction
 ) => {
+  if (err instanceof AppError) {
+    const response = formatErrorResponse(
+      err.statusCode,
+      err.name,
+      err.message,
+      err.code
+    );
+    return res.status(err.statusCode).json(response);
+  }
+
   if (err instanceof ZodError) {
-    res
-      .status(400)
-      .json({ message: "Erro de validação", issues: err.format() });
-    return;
+    const errors = err.issues.map((issue) => ({
+      field: issue.path.join("."),
+      message: issue.message,
+    }));
+    const response = formatErrorResponse(
+      400,
+      "Validation Error",
+      "Erro de validação",
+      "VALIDATION_ERROR",
+      errors
+    );
+    return res.status(400).json(response);
   }
 
   if (env.NODE_ENV !== "production") {
     console.error(err);
-  } else {
-    // TODO: adicionar ferramenta de log externa para quando tiver em produção
   }
 
-  res.status(500).json({ message: "Erro interno do servidor!" });
-  return;
+  const response = formatErrorResponse(
+    500,
+    "Internal Server Error",
+    "Erro interno do servidor",
+    "INTERNAL_SERVER_ERROR"
+  );
+  return res.status(500).json(response);
 };
 
 app.use(errorHandler);

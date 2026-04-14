@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { publishPostController } from "../controllers/post/publish-post-controller/publish-post.controller";
+import { publishPostController } from "../controllers/post/publish-post.controller";
 import { verifyJWT } from "../utils/jwt";
-import { savePostController } from "../controllers/post/save-post-controller/save-post.controller";
+import { savePostController } from "../controllers/post/save-post.controller";
 import { upload } from "../lib/multer";
-import { removeSavedPostController } from "../controllers/post/remove-saved-post-controller/remove-saved-post.controller";
-import getSavedPostsController from "../controllers/post/get-saved-posts-controller/get-saved-posts.controller";
-import { editPostController } from "../controllers/post/edit-post-controller/edit-post.controller";
-import { deletePostController } from "../controllers/post/delete-post-controller/delete-post.controller";
+import { removeSavedPostController } from "../controllers/post/remove-saved-post.controller";
+import getSavedPostsController from "../controllers/post/get-saved-posts.controller";
+import { editPostController } from "../controllers/post/edit-post.controller";
+import { deletePostController } from "../controllers/post/delete-post.controller";
 
 export const postRoutes = Router();
 

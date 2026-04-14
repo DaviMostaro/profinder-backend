@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { getUserController } from "../controllers/user/get-user-controller/get-user.controller";
-import { getUserPostsController } from "../controllers/user/get-user-posts-controller/get-user-posts.controller";
-import { updateUserController } from "../controllers/user/update-user-controller/update-user.controller";
+import { getUserController } from "../controllers/user/get-user.controller";
+import { getUserPostsController } from "../controllers/user/get-user-posts.controller";
+import { updateUserController } from "../controllers/user/update-user.controller";
 import { verifyJWT } from "../utils/jwt";
-import { deleteUserController } from "../controllers/user/delete-user-controller/delete-user.controller";
+import { deleteUserController } from "../controllers/user/delete-user.controller";
 import { upload } from "../lib/multer";
 
 export const userRoutes = Router();

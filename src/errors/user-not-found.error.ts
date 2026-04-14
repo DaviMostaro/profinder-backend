@@ -1,5 +1,7 @@
-export class UserNotFoundError extends Error {
-    constructor() {
-        super("Usuário não encontrado");
-    }
+import { AppError } from "./app-error";
+
+export class UserNotFoundError extends AppError {
+  constructor() {
+    super("Usuário não encontrado", 404, "USER_NOT_FOUND");
+  }
 }

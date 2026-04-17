@@ -52,6 +52,15 @@ const definition = {
           phone: { type: "string", minLength: 8, maxLength: 9 },
           bio: { type: "string", maxLength: 500 },
           avatarUrl: { type: "string", format: "uri" },
+          avatar: { type: "string", format: "binary" },
+        },
+      },
+      UpdatePostBody: {
+        type: "object",
+        properties: {
+          title: { type: "string", maxLength: 255 },
+          description: { type: "string" },
+          categoryId: { type: "string", format: "uuid", nullable: true },
         },
       },
       PublishPostBody: {
@@ -97,9 +106,40 @@ const definition = {
       Error: {
         type: "object",
         properties: {
-          message: { type: "string" },
-          error: { type: "string" },
-          issues: { type: "object" },
+          status: { type: "number", example: 400 },
+          title: { type: "string", example: "BadRequestError" },
+          description: { type: "string", example: "Mensagem de erro específica" },
+          code: { type: "string", example: "BAD_REQUEST" },
+          timestamp: { type: "string", format: "date-time" },
+          errors: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                field: { type: "string" },
+                message: { type: "string" },
+              },
+            },
+          },
+        },
+      },
+      Review: {
+        type: "object",
+        properties: {
+          id: { type: "string", format: "uuid" },
+          userId: { type: "string", format: "uuid" },
+          postId: { type: "string", format: "uuid" },
+          rating: { type: "number", minimum: 1, maximum: 5 },
+          comment: { type: "string" },
+          createdAt: { type: "string", format: "date-time" },
+        },
+      },
+      CreateReviewBody: {
+        type: "object",
+        required: ["rating", "comment"],
+        properties: {
+          rating: { type: "number", minimum: 1, maximum: 5, example: 5 },
+          comment: { type: "string", minLength: 1, example: "Great service!" },
         },
       },
     },
@@ -109,6 +149,8 @@ const definition = {
     { name: "Auth", description: "Authentication (signup, signin)" },
     { name: "User", description: "User profile and posts" },
     { name: "Post", description: "Service posts" },
+    { name: "Search", description: "Search posts" },
+    { name: "Reviews", description: "Post reviews" },
   ],
   paths: swaggerPaths,
 };

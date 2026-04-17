@@ -1,5 +1,7 @@
-export class RemoveSavedPostError extends Error {
-    constructor() {
-        super("Erro ao remover post salvo");
-    }
+import { AppError } from "./app-error";
+
+export class RemoveSavedPostError extends AppError {
+  constructor() {
+    super("Erro ao remover post salvo", 500, "REMOVE_SAVED_POST_ERROR");
+  }
 }

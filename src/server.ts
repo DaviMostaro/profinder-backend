@@ -15,7 +15,7 @@ import { ZodError } from "zod";
 import { AppError } from "./errors/app-error";
 import { formatErrorResponse } from "./errors/error-response";
 
-const app = express();
+export const app = express();
 
 app.use(
   cors({
@@ -75,6 +75,8 @@ const errorHandler: ErrorRequestHandler = (
 
 app.use(errorHandler);
 
-app.listen(env.PORT, () => {
-  console.log(`Server running on http://localhost:${env.PORT} ✔`);
-});
+if (env.NODE_ENV !== "test") {
+  app.listen(env.PORT, () => {
+    console.log(`Server running on http://localhost:${env.PORT} ✔`);
+  });
+}
